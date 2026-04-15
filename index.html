@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Alvaro's Landscaping - Professional lawn care, sod installation, sealcoating, and asphalt services in Bensenville, IL and surrounding areas.">
+    <meta name="theme-color" content="#2D5A27">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Alvaro's Landscaping - Professional Outdoor Services">
+    <meta property="og:description" content="Transform your outdoor space with professional landscaping services in Bensenville, IL.">
+    <meta property="og:type" content="business.business">
+
+    <title>Alvaro's Landscaping - Bensenville, IL</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --forest: #2D5A27;
+            --forest-dark: #1E3D1A;
+            --sage: #7CA982;
+            --lime: #A4C639;
+            --earth: #5C4033;
+            --sand: #F5F0E8;
+            --cream: #FFFDF7;
+            --charcoal: #2B2B2B;
+            --text: #333;
+            --light-text: #666;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--text);
+            background-color: var(--sand);
+            line-height: 1.6;
+            font-size: 16px;
+        }
+
+        /* HEADER & NAV */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: var(--forest);
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--lime);
+        }
+
+        .cta-button {
+            background-color: var(--lime);
+            color: var(--forest-dark);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .cta-button:hover {
+            background-color: #8DB318;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            background: none;
+            border: none;
+            gap: 6px;
+            padding: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            transition: all 0.3s;
+            border-radius: 2px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(10px, 10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -8px);
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background-color: var(--forest);
+            flex-direction: column;
+            padding: 20px;
+            gap: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        /* HERO SECTION */
+        #hero {
+            margin-top: 70px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 8vw, 72px);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 600px;
+            opacity: 0.95;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background-color: var(--lime);
+            color: var(--forest-dark);
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--lime);
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-primary:hover {
+            background-color: #8DB318;
+            border-color: #8DB318;
+        }
+
+        .btn-ghost {
+            background-color: transparent;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            border: 2px solid white;
+            transition: all 0.3s;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn-ghost:hover {
+            background-color: white;
+            color: var(--forest);
+        }
+
+        /* SECTION STYLES */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section h2 {
+            font-size: clamp(32px, 6vw, 48px);
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--forest);
+        }
+
+        /* ABOUT SECTION */
+        #about {
+            background-color: var(--cream);
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--forest) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-image svg {
+            width: 80px;
+            height: 80px;
+            opacity: 0.3;
+        }
+
+        .about-content h3 {
+            font-size: 32px;
+            color: var(--forest);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+            color: var(--light-text);
+            line-height: 1.8;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--forest);
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--light-text);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SERVICES SECTION */
+        #services {
+            background-color: var(--sand);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--cream);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 1px solid #e0ddd5;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--forest);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--light-text);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* GALLERY SECTION */
+        #gallery {
+            background-color: var(--cream);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-tile {
+            aspect-ratio: 3 / 2;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--forest) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .gallery-tile:hover {
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-tile:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-label {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        /* TESTIMONIALS SECTION */
+        #testimonials {
+            background-color: var(--sand);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: var(--cream);
+            padding: 40px 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--forest);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--forest);
+        }
+
+        .testimonial-location {
+            font-size: 13px;
+            color: var(--light-text);
+        }
+
+        .testimonial-rating {
+            font-size: 13px;
+            color: var(--lime);
+            font-weight: 600;
+        }
+
+        .testimonial-quote {
+            color: var(--light-text);
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        /* CONTACT SECTION */
+        #contact {
+            background: linear-gradient(135deg, var(--forest) 0%, var(--forest-dark) 100%);
+            color: white;
+        }
+
+        #contact h2 {
+            color: white;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .contact-info h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--sage);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: white;
+            fill: none;
+            stroke-width: 2;
+        }
+
+        .contact-text a {
+            color: var(--lime);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-text a:hover {
+            color: white;
+        }
+
+        .service-list {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            line-height: 2;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 14px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: var(--text);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background-color: white;
+            box-shadow: 0 0 0 3px rgba(164, 198, 57, 0.3);
+        }
+
+        .submit-button {
+            background-color: var(--lime);
+            color: var(--forest-dark);
+            padding: 14px 30px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .submit-button:hover {
+            background-color: #8DB318;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--charcoal);
+            color: white;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .footer-logo svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-tagline {
+            color: #ccc;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background-color: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: var(--lime);
+        }
+
+        .hours {
+            font-size: 14px;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 30px;
+            text-align: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav {
+                height: 60px;
+                padding: 0 15px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .cta-button {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .about-container,
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            section h2 {
+                margin-bottom: 30px;
+            }
+
+            .service-card,
+            .testimonial-card {
+                padding: 30px 20px;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn-primary,
+            .btn-ghost {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #hero {
+                min-height: auto;
+                padding: 60px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER & NAVIGATION -->
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C12 2 6 8 6 14C6 17.3 8.7 20 12 20C15.3 20 18 17.3 18 14C18 8 12 2 12 2Z"/>
+                    <path d="M9 14C9 15.7 10.3 17 12 17C13.7 17 15 15.7 15 14" stroke="currentColor" stroke-width="1" fill="none"/>
+                </svg>
+                Alvaro's Landscaping
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="cta-button" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Call Now</button>
+            <button class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+        <div class="mobile-menu" id="mobile-menu">
+            <a href="#about" onclick="closeMenu()">About</a>
+            <a href="#services" onclick="closeMenu()">Services</a>
+            <a href="#gallery" onclick="closeMenu()">Gallery</a>
+            <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+            <a href="#contact" onclick="closeMenu()">Contact</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <span class="hero-badge">Serving Bensenville, IL & Surrounding Areas</span>
+        <h1>Transform Your Outdoor Space</h1>
+        <p>Professional landscaping and hardscaping services to bring your vision to life</p>
+        <div class="hero-ctas">
+            <a href="#contact" class="btn-primary">Get a Free Estimate</a>
+            <a href="#gallery" class="btn-ghost">View Our Work</a>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Us</h2>
+        <div class="about-container">
+            <div class="about-image">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2C12 2 6 8 6 14C6 17.3 8.7 20 12 20C15.3 20 18 17.3 18 14C18 8 12 2 12 2Z"/>
+                </svg>
+            </div>
+            <div class="about-content">
+                <h3>Meet Alvaro</h3>
+                <p>With over 15 years of experience in landscaping and hardscaping, Alvaro has built a reputation for excellence and attention to detail. From humble beginnings, he's grown to serve hundreds of satisfied customers throughout the Bensenville area.</p>
+                <p>Every project is approached with care, expertise, and a commitment to exceeding expectations. Whether you need routine lawn maintenance or a complete outdoor transformation, we're here to help.</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Happy Clients</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99%</div>
+                        <div class="stat-label">Satisfaction Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3V21M3 12H21"/>
+                    </svg>
+                </div>
+                <h3>Lawn Care</h3>
+                <p>Professional mowing, edging, and lawn maintenance to keep your grass healthy and vibrant year-round.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 3L6 9M12 3L18 9M6 12V20H18V12" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                </div>
+                <h3>Trimming & Pruning</h3>
+                <p>Expert tree and shrub trimming to enhance the beauty and health of your landscape.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="8"/>
+                    </svg>
+                </div>
+                <h3>Mulch Installation</h3>
+                <p>Quality mulch installation to improve soil health, retain moisture, and enhance curb appeal.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="3" y="8" width="18" height="13" rx="1"/>
+                    </svg>
+                </div>
+                <h3>Sod Installation</h3>
+                <p>Professional sod installation for new lawns or lawn renovation with immediate results.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="4" y="10" width="16" height="10" rx="1"/>
+                    </svg>
+                </div>
+                <h3>Sealcoating</h3>
+                <p>Driveway and parking lot sealcoating to protect your asphalt and extend its lifespan.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 18L21 18M6 12L18 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Stripping & Gravel</h3>
+                <p>Parking lot line stripping, gravel installation, and maintenance for commercial properties.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 15L21 15M6 9L18 9" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>Asphalt Services</h3>
+                <p>Complete asphalt repair, patching, and resurfacing for residential and commercial applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery">
+        <h2>Our Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Lawn Transformation</span>
+                </div>
+            </div>
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Professional Trimming</span>
+                </div>
+            </div>
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Mulch Installation</span>
+                </div>
+            </div>
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Sod Installation</span>
+                </div>
+            </div>
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Sealcoating</span>
+                </div>
+            </div>
+            <div class="gallery-tile">
+                <div class="gallery-overlay">
+                    <span class="gallery-label">Complete Hardscape</span>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; color: #666;">
+            Follow us on Instagram <a href="https://www.instagram.com/alvaros.landscaping" target="_blank" style="color: var(--forest); font-weight: 600;">@alvaros.landscaping</a>
+        </p>
+    </section>
+
+    <!-- TESTIMONIALS SECTION -->
+    <section id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">M</div>
+                    <div>
+                        <div class="testimonial-name">Maria Rodriguez</div>
+                        <div class="testimonial-location">Bensenville, IL</div>
+                        <div class="testimonial-rating">★★★★★ 5/5</div>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"Alvaro completely transformed our backyard. Professional, reliable, and delivered exactly what we envisioned. Highly recommend!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">J</div>
+                    <div>
+                        <div class="testimonial-name">John Peterson</div>
+                        <div class="testimonial-location">Elmhurst, IL</div>
+                        <div class="testimonial-rating">★★★★★ 5/5</div>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"Best landscaping service in the area. Alvaro pays attention to detail and takes pride in his work. Our lawn has never looked better!"</p>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-header">
+                    <div class="testimonial-avatar">S</div>
+                    <div>
+                        <div class="testimonial-name">Sarah Chen</div>
+                        <div class="testimonial-location">Glendale Heights, IL</div>
+                        <div class="testimonial-rating">★★★★★ 5/5</div>
+                    </div>
+                </div>
+                <p class="testimonial-quote">"From mulch installation to sealcoating, Alvaro handles it all professionally. Fair pricing and honest communication throughout."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div>
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Phone:</strong><br>
+                            <a href="tel:+16306701234">(630) 670-1234</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                                <path d="M2 6l10 7.5L22 6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Email:</strong><br>
+                            <a href="mailto:info@alvaroslandscaping.com">info@alvaroslandscaping.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <strong>Service Area:</strong><br>
+                            Bensenville, IL & Surrounding Areas
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3>Services Available</h3>
+                    <div class="service-list">
+                        • Lawn Care<br>
+                        • Trimming & Pruning<br>
+                        • Mulch Installation<br>
+                        • Sod Installation<br>
+                        • Sealcoating<br>
+                        • Stripping & Gravel<br>
+                        • Asphalt Services
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interested In</label>
+                    <select id="service" name="service" required>
+                        <option value="">-- Select a Service --</option>
+                        <option value="lawn-care">Lawn Care</option>
+                        <option value="trimming">Trimming & Pruning</option>
+                        <option value="mulch">Mulch Installation</option>
+                        <option value="sod">Sod Installation</option>
+                        <option value="sealcoating">Sealcoating</option>
+                        <option value="stripping">Stripping & Gravel</option>
+                        <option value="asphalt">Asphalt Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+                <p style="font-size: 12px; color: rgba(255, 255, 255, 0.7); margin-top: 10px;">
+                    Note: Form submissions will be integrated with Formspree for email delivery.
+                </p>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C12 2 6 8 6 14C6 17.3 8.7 20 12 20C15.3 20 18 17.3 18 14C18 8 12 2 12 2Z"/>
+                    </svg>
+                    Alvaro's Landscaping
+                </div>
+                <p class="footer-tagline">Professional outdoor services for Bensenville, IL and surrounding areas.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/alvaros.landscaping" target="_blank" title="Instagram">f</a>
+                </div>
+                <h4 style="margin-top: 20px;">Business Hours</h4>
+                <div class="hours">
+                    <strong>Mon - Fri:</strong> 8:00 AM - 5:00 PM<br>
+                    <strong>Sat:</strong> 9:00 AM - 3:00 PM<br>
+                    <strong>Sun:</strong> Closed
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Alvaro's Landscaping. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- STRUCTURED DATA -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "LocalBusiness",
+        "name": "Alvaro's Landscaping",
+        "image": "",
+        "description": "Professional landscaping and hardscaping services in Bensenville, IL",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Bensenville",
+            "addressRegion": "IL"
+        },
+        "telephone": "(630) 670-1234",
+        "email": "info@alvaroslandscaping.com",
+        "priceRange": "$$",
+        "areaServed": "Bensenville, IL",
+        "sameAs": "https://www.instagram.com/alvaros.landscaping"
+    }
+    </script>
+
+    <!-- MINIMAL JAVASCRIPT -->
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        function closeMenu() {
+            hamburger.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('header')) {
+                closeMenu();
+            }
+        });
+
+        // Smooth scroll for nav links (already handled by CSS, but enhanced here)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                        closeMenu();
+                    }
+                }
+            });
+        });
+
+        // Form submission handler (future: integrate with Formspree)
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
